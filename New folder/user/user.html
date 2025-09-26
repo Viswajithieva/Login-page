@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User List</title>
+  <link rel="stylesheet" href="user.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Users</h2>
+
+    <!-- Toolbar -->
+    <div class="filter-bar">
+      <input type="text" id="searchInput" placeholder="Search by name or email">
+      <select id="statusFilter">
+        <option value="all">All Status</option>
+        <option value="Active">Active</option>
+        <option value="Inactive">Inactive</option>
+      </select>
+      <button id="addUserBtn" class="add-btn">+ Add New User</button>
+    </div>
+
+    <!-- User Table -->
+    <table>
+      <thead>
+        <tr>
+          <th>S.No</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Initials</th>
+          <th>Phone</th>
+          <th>Role</th>
+          <th>Status</th>
+          <th>Title</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="userTableBody"></tbody>
+    </table>
+
+    <!-- Pagination -->
+    <div class="pagination">
+      <button id="prevBtn">Prev</button>
+      <span id="pageInfo"></span>
+      <button id="nextBtn">Next</button>
+    </div>
+  </div>
+
+  <!-- Add User Modal -->
+  <div id="userModal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal" class="close">&times;</span>
+      <h3>Add New User</h3>
+      <form id="userForm">
+        <input type="text" id="name" placeholder="Name" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="text" id="initials" placeholder="Initials" required>
+        <input type="text" id="phone" placeholder="Phone" required>
+        <input type="text" id="role" placeholder="Role" required>
+        <select id="status">
+          <option value="Active">Active</option>
+          <option value="Inactive">Inactive</option>
+        </select>
+        <input type="text" id="title" placeholder="Title" required>
+        <button type="submit">Save</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="user.js"></script>
+</body>
+</html>
